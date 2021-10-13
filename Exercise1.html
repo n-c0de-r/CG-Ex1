@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CG Exercise 1 - Part C - no clear</title>
+</head>
+
+<body>
+  <h3>Color Pattern</h3>
+  <canvas id="canvas-c" width=600 height=600></canvas>
+  <script>
+    //Put your javascript here
+    let canvas = document.getElementById("canvas-c");
+    let back = canvas.style.backgroundColor = "black";
+    let context = canvas.getContext("2d");
+
+    window.requestAnimationFrame(render);
+
+    function clear () {
+      context.fillStyle = back;
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      // oder clearRect();
+    }
+
+    function render(time) {
+      let r = Math.random();
+      let g = Math.random();
+      let b = Math.random();
+      
+      context.fillStyle = 'rgb(' + Math.floor(255*r) + ','
+      + Math.floor(255*g) + ',' + Math.floor(255*b) + ')';
+      context.fillRect(r*canvas.width, g*canvas.height,
+      canvas.width/10*b,canvas.width/10*b);
+
+      window.requestAnimationFrame(render);
+    }
+  </script>
+</body>
+
+</html>
