@@ -2,12 +2,12 @@
 <html>
 
 <head>
-  <title>CG Exercise 1 - Part C - no clear</title>
+  <title>CG-Ex1: Canvas Animation</title>
 </head>
 
 <body>
-  <h3>Color Pattern</h3>
-  <canvas id="canvas-c" width=600 height=600></canvas>
+  <h3>n-c0de-r</h3>
+  <canvas id="canvas-c" width=300 height=300></canvas>
   <script>
     //Put your javascript here
     let canvas = document.getElementById("canvas-c");
@@ -30,7 +30,7 @@
       
       context.fillStyle = 'rgb(' + Math.floor(255*r) + ','
       + Math.floor(255*g) + ',' + Math.floor(255*b) + ')';
-      context.fillRect(r*canvas.width, g*canvas.height,
+      context.fillRect(r*(canvas.width-canvas.width/20), g*(canvas.height-canvas.height/20),
       canvas.width/10*b,canvas.width/10*b);
 
       window.requestAnimationFrame(render);
